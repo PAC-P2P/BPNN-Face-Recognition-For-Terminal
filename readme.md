@@ -1,5 +1,11 @@
 # 基于并行BP神经网络的人脸识别系统
 
+此为终端版的人脸识别系统
+
+QT版请戳
+
+[Github . PAC-P2P/BPNN-Face-Recognition](https://github.com/PAC-P2P/BPNN-Face-Recognition)
+
 ## 使用说明
 
 ### 配置路径
