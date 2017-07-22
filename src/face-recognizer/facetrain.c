@@ -38,18 +38,18 @@ int evaluate_performance(net, err) BPNN *net;
 double *err;
 {
   bool flag = true; // 样例匹配成功为true
-  
+
   *err = 0.0;
   double delta;
-  
+
   // 计算输出层均方误差之和
-  for (int j = 1; j <= net->output_n; j++) 
+  for (int j = 1; j <= net->output_n; j++)
   {
     delta = net->target[j] - net->output_units[j];
     *err += (0.5 * delta * delta);
   }
-  
-  
+
+
   for (int j = 1; j <= net->output_n; j++) {
     /*** If the target unit is on... ***/
     if (net->target[j] > 0.5) {
@@ -106,12 +106,12 @@ int list_errors;
       if (evaluate_performance(net, &val)) {
         //匹配成功，计数器加1
         correct++;
-      } 
-      else if (list_errors) 
+      }
+      else if (list_errors)
       {
         printf("%s", NAME(il->list[i]));
 
-        // for (j = 1; j <= net->output_n; j++) 
+        // for (j = 1; j <= net->output_n; j++)
         // {
         //   printf("%.3f ", net->output_units[j]);
         // }
@@ -214,7 +214,7 @@ int list_errors;
       // } else if (net->target[20] > 0.5) {
       //   printf("tammo");
       // }
-      
+
       // printf("\n");
 
       // // 打印输出层单元输出值
@@ -243,8 +243,8 @@ int list_errors;
       // 18 steffi   <.1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .9, .1, .1>
       // 19 sz24     <.1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .9, .1>
       // 20 tammo    <.1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .1, .9>
-      
-      // 输出预测人物 
+
+      // 输出预测人物
       if (net->output_units[1] > 0.5 && net->output_units[2] <= 0.5 &&
           net->output_units[3] <= 0.5 && net->output_units[4] <= 0.5 &&
           net->output_units[5] <= 0.5 && net->output_units[6] <= 0.5 &&
